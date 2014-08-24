@@ -8,6 +8,13 @@ This runs `program` as user `user`, setting the user ID, group ID,
 supplementary groups, and `USER`, `UID`, `HOME`, and `SHELL` environment
 variables.
 
+This program is like [gosu][], but is in C instead of Go so it requires almost
+no build system.  The privilege-dropping logic is inspired by
+[Privileges::Drop][].
+
+[gosu]: https://github.com/tianon/gosu/
+[Privileges::Drop]: https://metacpan.org/source/TLBDK/Privileges-Drop-1.03/lib/Privileges/Drop.pm
+
 ## Copyright
 
 Copyright (c) 2014 Michael Ekstrand.
