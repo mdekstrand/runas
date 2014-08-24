@@ -9,8 +9,14 @@ supplementary groups, and `USER`, `UID`, `HOME`, and `SHELL` environment
 variables.
 
 This program is like [gosu][], but is in C instead of Go so it requires almost
-no build system.  The privilege-dropping logic is inspired by
-[Privileges::Drop][].
+no build system.  In general, rewriting programs just because of implementation
+languages, especially when things like resource consumption aren't the crucial
+matter, isn't a wise use of time.  But gosu's build system is pretty heavy, and
+it requires libraries that aren't in Fedora.  This program requires nothing but
+the Linux system libraries.
+
+The privilege-dropping logic is inspired by [Privileges::Drop][].  It does not
+yet do anything to handle SELinux transitions; that can be considered a bug.
 
 [gosu]: https://github.com/tianon/gosu/
 [Privileges::Drop]: https://metacpan.org/source/TLBDK/Privileges-Drop-1.03/lib/Privileges/Drop.pm
